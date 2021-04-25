@@ -9,7 +9,6 @@ E:\Projects\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_
 E:\Projects\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.pdb
 E:\Projects\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.Views.dll
 E:\Projects\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.Views.pdb
-E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.csprojAssemblyReference.cache
 E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.AssemblyInfoInputs.cache
 E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.AssemblyInfo.cs
 E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.csproj.CoreCompileInputs.cache
@@ -36,3 +35,44 @@ E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_
 E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.pdb
 E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.genruntimeconfig.cache
 E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.csproj.CopyComplete
+E:\Projects\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+E:\Projects\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.csprojAssemblyReference.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\libman.json
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.exe
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.deps.json
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.runtimeconfig.json
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.runtimeconfig.dev.json
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.dll
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.pdb
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.Views.dll
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\SmartMeal_Server.Views.pdb
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.csprojAssemblyReference.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.AssemblyInfoInputs.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.AssemblyInfo.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.csproj.CoreCompileInputs.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.MvcApplicationPartsAssemblyInfo.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.RazorAssemblyInfo.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.RazorAssemblyInfo.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\staticwebassets\SmartMeal_Server.StaticWebAssets.Manifest.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\staticwebassets\SmartMeal_Server.StaticWebAssets.xml
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\scopedcss\bundle\SmartMeal_Server.styles.css
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.TagHelpers.input.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.TagHelpers.output.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.RazorCoreGenerate.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.RazorTargetAssemblyInfo.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.RazorTargetAssemblyInfo.cs
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.Views.pdb
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.csproj.CopyComplete
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.dll
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.pdb
+E:\Github Repo\SmartMeal_Server\SmartMeal_Server\obj\Debug\netcoreapp3.1\SmartMeal_Server.genruntimeconfig.cache

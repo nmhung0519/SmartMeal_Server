@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj": {}
+    "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj": {
+    "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
+        "projectUniqueName": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
         "projectName": "SmartMeal_Server",
-        "projectPath": "E:\\Projects\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
+        "projectPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\SmartMeal_Server\\SmartMeal_Server\\obj\\",
+        "outputPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[1.3.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

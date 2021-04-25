@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZmSUmj0l4N9JZa7FmtE7dlC+dSl+aeeNh1/cshjALtVwPhJ8Js/gat8ft5MTGIvNbFISgN4vQOfiH5T/0IphUg==",
+  "success": true,
+  "projectFilePath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\mysqlconnector\\1.3.5\\mysqlconnector.1.3.5.nupkg.sha512"
+  ],
+  "logs": []
+}
