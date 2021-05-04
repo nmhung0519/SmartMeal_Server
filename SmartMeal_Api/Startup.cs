@@ -25,6 +25,7 @@ namespace SmartMeal_Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +43,7 @@ namespace SmartMeal_Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<MainHub>("/hub");
             });
         }
     }

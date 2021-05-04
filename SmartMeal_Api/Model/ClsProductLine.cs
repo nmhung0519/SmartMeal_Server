@@ -9,22 +9,28 @@ namespace SmartMeal_Api.Model
 {
     public class ClsProductLine
     {
-        public bool Insert(string name, int parentId, out string msg)
+        public string Insert(ProductLineModel model, string username, out ProductLineModel productLine)
         {
-            msg = "";
-
+            productLine = null;
             var connection = new Connection();
             Hashtable ht = new Hashtable();
             try
             {
-                ht.Add("pName", name);
-                ht.Add("pParentId", parentId);
-                if (connection.ExecuteNonQuery("sp_ProductLine_Insert", ht) > 0) return true;
-                return false;
+                ht.Add("Name", model.Name);
+                ht.Add("ParentId", model.ParentId);
+                ht.Add("Username", username);
+                DataTable dt;
+                string msg = connection.GetDatatableFromProc("sp_ProductLine_Insert", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (dt == null || dt.Rows.Count == 0) return "Xảy ra lỗi trong quá trình thêm mới sản phẩm";
+                int plId = 0;
+                if (!int.TryParse(dt.Rows[0].ItemArray[0].ToString(), out plId)) return dt.Rows[0].ItemArray[0].ToString();
+                msg = GetById(plId, out productLine);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                return "";
             }
             catch (Exception ex) {
-                msg = ex.Message;
-                return false;
+                return ex.Message;
             }
             finally
             {
@@ -58,6 +64,25 @@ namespace SmartMeal_Api.Model
                 connection = null;
                 ht = null;
             }
+        }
+
+        public string GetById(int id, out ProductLineModel productLine)
+        {
+            productLine = null;
+            try
+            {
+                var model = new ProductLineModel();
+                model.Id = id;
+                model.ParentId = -1;
+                model.IsActive = -1;
+                List<ProductLineModel> pls;
+                string msg = Search(model, out pls);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (pls == null) return "Lỗi trong quá trình lấy thông tin dòng sản phẩm";
+                productLine = pls.FirstOrDefault();
+                return "";
+            }
+            catch (Exception ex) { return ex.Message; }
         }
     }
 }

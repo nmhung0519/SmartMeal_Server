@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR.Client;
 using SmartMeal_Api.Model;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace SmartMeal_Api.Controllers
         [Route("Insert")]
         [HttpPost]
         [Authen]
-        public ResponseModel Insert([FromBody] string tableName)
+        public async Task<ResponseModel> Insert([FromBody] string tableName)
         {
             var clsTable = new ClsTable();
             int tableId;
@@ -37,6 +38,17 @@ namespace SmartMeal_Api.Controllers
             TableModel table;
             msg = clsTable.GetById(tableId, out table);
             if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+            var hubConnectionBuilder = new HubConnectionBuilder();
+            hubConnectionBuilder.WithUrl("http://api.smartmeal.com/tablehub");
+            var hubConnection = hubConnectionBuilder.Build();
+            try
+            {
+                var task = Task.Run(() => hubConnection.StartAsync());
+                task.Wait();
+                task = Task.Run(() => hubConnection.InvokeAsync("Insert", table));
+                task.Wait();
+            }
+            catch { }
             return new ResponseModel(true, table);
         }
     }

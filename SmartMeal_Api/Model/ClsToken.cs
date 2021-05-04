@@ -35,7 +35,7 @@ namespace SmartMeal_Api.Model
                 if (tmp[2].Equals(signature) && objHeader.expired >= GetTime(DateTime.Now)) isVerified = true;
 
             }
-            catch { }
+            catch { isVerified = false; }
             return isVerified;
         }
 
@@ -49,7 +49,7 @@ namespace SmartMeal_Api.Model
                 username = objPayload.username;
                 return true;
             }
-            catch (Exception ex) { return false; }
+            catch { return false; }
         }
 
         private static int GetTime(DateTime datetime)

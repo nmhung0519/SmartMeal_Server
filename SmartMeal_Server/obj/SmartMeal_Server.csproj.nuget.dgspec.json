@@ -4,14 +4,14 @@
     "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj": {}
   },
   "projects": {
-    "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj": {
+    "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
-        "projectName": "SmartMeal_Server",
-        "projectPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
+        "projectUniqueName": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Api.csproj",
+        "projectName": "SmartMeal_Api",
+        "projectPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Api.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\obj\\",
+        "outputPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,92 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[1.3.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
+        "projectName": "SmartMeal_Server",
+        "projectPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\SmartMeal_Server.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Api.csproj": {
+                "projectPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.TestPlatform.ObjectModel": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[1.3.5, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.11.7, )"
             }
           },
           "imports": [

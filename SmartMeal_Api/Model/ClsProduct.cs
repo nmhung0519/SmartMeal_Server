@@ -77,5 +77,23 @@ namespace SmartMeal_Api.Model
             }
             catch (Exception ex) { return ex.Message; }
         }
+
+        public string Update(ProductModel model, string username)
+        {
+            var connection = new Connection();
+            Hashtable ht = new Hashtable();
+            try
+            {
+                ht.Add("Id", model.Id);
+                ht.Add("Name", model.Name);
+                ht.Add("ProductLineId", model.ProductLineId);
+                ht.Add("Price", model.Price);
+                ht.Add("IsActive", model.IsActive);
+                ht.Add("Username", username);
+                if (connection.ExecuteNonQuery("sp_Product_Update", ht) > 1) return "";
+                return "Xảy ra lỗi trong quá trình cập nhật sản phẩm";
+            }
+            catch (Exception ex) { return ex.Message; }
+        }
     }
 }

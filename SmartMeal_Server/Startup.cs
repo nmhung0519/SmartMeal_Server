@@ -53,6 +53,8 @@ namespace SmartMeal_Server
             {
                 endpoints.MapRazorPages();
                 endpoints.MapHub<TestMoveHub>("/movehub");
+                endpoints.MapHub<TableHub>("/tablehub");
+                endpoints.MapHub<MainHub>("/mainhub");
             });
             
         }

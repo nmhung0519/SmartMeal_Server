@@ -17,14 +17,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SmartMeal_Api": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "Account",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:5000"
+    "SmartMeal_Server": {
+      "commandName": "Project"
     }
   }
 }

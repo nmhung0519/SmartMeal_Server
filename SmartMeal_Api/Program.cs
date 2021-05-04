@@ -15,13 +15,13 @@ namespace SmartMeal_Api
         {
             CreateHostBuilder(args).Build().Run();
         }
-
+        
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://192.168.1.190:8080");
+                    webBuilder.UseUrls("http://[::]:80");
                 });
     }
 }

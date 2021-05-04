@@ -21,7 +21,7 @@ namespace SmartMeal_Server
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://192.168.1.190");
+                    webBuilder.UseUrls("http://hub.smartmeal.com");
                 });
     }
 }

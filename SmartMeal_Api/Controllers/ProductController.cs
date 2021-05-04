@@ -48,7 +48,7 @@ namespace SmartMeal_Api.Controllers
         [Route("ChangeStatus")]
         [HttpPost]
         [Authen]
-        public ResponseModel ChangeStatus([FromBody] SearchProductModel model)
+        public ResponseModel ChangeStatus([FromBody] ProductModel model)
         {
             try
             {
@@ -63,6 +63,28 @@ namespace SmartMeal_Api.Controllers
                 string msg = cls.ChangeStatus(model.Id, model.IsActive, username);
                 if (string.IsNullOrEmpty(msg)) return new ResponseModel(true, null);
                 return new ResponseModel(false, msg);
+            }
+            catch (Exception ex) { return new ResponseModel(false, ex.Message); }
+        }
+
+        [Route("Update")]
+        [HttpPost]
+        [Authen]
+        public ResponseModel Update([FromBody] ProductModel model)
+        {
+            try
+            {
+                StringValues token;
+                HttpContext.Request.Headers.TryGetValue("Authorization", out token);
+                string username;
+                if (!ClsToken.TryGetUser(token, out username))
+                {
+                    return new ResponseModel(false, "Xảy ra lỗi trong quá trình xác thực không hợp lệ");
+                }
+                var cls = new ClsProduct();
+                string msg = cls.Update(model, username);
+                if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+                return new ResponseModel(true, null);
             }
             catch (Exception ex) { return new ResponseModel(false, ex.Message); }
         }
