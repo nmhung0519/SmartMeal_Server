@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using SmartMeal_Api.Controllers;
 using SmartMeal_Api.Model;
+using SmartMeal_Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,14 @@ namespace SmartMeal_Api
 {
     public class MainHub: Hub
     {
-        private static List<UserRegister> users = new List<UserRegister>();
+        
         public async Task Register(string username, string token)
         {
             try
             {
                 if (ClsToken.Verify(token) && ClsToken.TryGetUser(token, out username) && username.Equals(username))
                 {
-                    users.Add(new UserRegister(Context.ConnectionId, username));
+                    UserManager.Add(username, Context.ConnectionId);
                     await Clients.Caller.SendAsync("VerifyConnection", true);
                     return;
                 }
@@ -28,45 +29,47 @@ namespace SmartMeal_Api
 
         public override Task OnDisconnectedAsync(Exception exception)
         {
-            users.Remove(users.Where(x => x.ConnectionId == Context.ConnectionId).FirstOrDefault());
+            UserManager.DeleteByConnectionId(Context.ConnectionId);
             return base.OnDisconnectedAsync(exception);
+        }
+
+        public async Task GetToken()
+        {
+            if (!UserManager.CheckExists(Context.ConnectionId))
+            {
+                await Clients.Caller.SendAsync("Unauthorized");
+                await Clients.Caller.SendAsync("Table", 1, 1);
+                return;
+            }
+
+            var ctlToken = new TokenController();
+            await Clients.All.SendAsync("Token", ClsToken.Get(UserManager.GetUserName(Context.ConnectionId)));
         }
 
         public async Task Message(string receivers, string message)
         {
-            var user = users.Where(x => x.ConnectionId == Context.ConnectionId).FirstOrDefault();
-            if (user == null)
+            if (!UserManager.CheckExists(Context.ConnectionId))
             {
                 await Clients.Caller.SendAsync("Unauthorized");
                 return;
             }
 
+            string sender = UserManager.GetUserName(Context.ConnectionId);
+
             if (receivers == "")
             {
-                await Clients.All.SendAsync("Message", user.Username, message);
+                await Clients.All.SendAsync("Message", sender, message);
                 return;
             }
 
             var sendTo = receivers.Split(';');
             foreach (var receiver in sendTo)
             {
-                var userSendTo = users.Where(x => x.Username == receiver).FirstOrDefault();
+                var userSendTo = UserManager.GetConnectionId(receiver);
                 if (userSendTo == null) continue;
-                string connectionSendToId = userSendTo.ConnectionId;
-                await Clients.Client(connectionSendToId).SendAsync("Message", user.Username, message);
+                string connectionSendToId = userSendTo;
+                await Clients.Client(connectionSendToId).SendAsync("Message", sender, message);
             }
-        }
-    }
-
-    class UserRegister
-    {
-        public string ConnectionId { get; set; }
-        public string Username { get; set; }
-        public UserRegister() { }
-        public UserRegister(string id, string username)
-        {
-            ConnectionId = id;
-            Username = username;
         }
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -13,7 +14,9 @@ namespace SmartMeal_Api
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            var hubContext = host.Services.GetService(typeof(IHubContext<MainHub>));
+            host.Run();
         }
         
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -21,7 +24,7 @@ namespace SmartMeal_Api
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://[::]:80");
+                    webBuilder.UseUrls("http://192.168.1.190:8089");
                 });
     }
 }

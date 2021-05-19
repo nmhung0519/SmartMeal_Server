@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.SignalR.Client;
 using SmartMeal_Api.Model;
+using SmartMeal_Server;
+using SmartMeal_Server.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +17,13 @@ namespace SmartMeal_Api.Controllers
     [ApiController]
     public class TableController : ControllerBase
     {
+        private readonly IHubContext<MainHub> _hub;
+
+        public TableController(IHubContext<MainHub> hub)
+        {
+            _hub = hub;
+        }
+
         [Route("GetAllActive")]
         [HttpGet]
         [Authen]
@@ -24,6 +34,18 @@ namespace SmartMeal_Api.Controllers
             string msg = clsTable.GetAllActive(out tables);
             if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
             return new ResponseModel(true, tables);
+        }
+
+        [Route("GetById")]
+        [HttpPost]
+        [Authen]
+        public ResponseModel GetById([FromBody]TableModel model)
+        {
+            var clsTable = new ClsTable();
+            TableModel table;
+            string msg = clsTable.GetById(model.Id, out table);
+            if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+            return new ResponseModel(true, table);
         }
 
         [Route("Insert")]
@@ -50,6 +72,24 @@ namespace SmartMeal_Api.Controllers
             }
             catch { }
             return new ResponseModel(true, table);
+        }
+
+        [Route("Order")]
+        [HttpPost]
+        [Authen]
+        public async Task<ResponseModel> Order(OrderModel model)
+        {
+            var clsOrder = new ClsOrder();
+            string msg = clsOrder.InsertOrUpdate(model);
+            if (string.IsNullOrEmpty(msg))
+            {
+                object objTableId = model.TableId;
+                object objTypeId = 1;
+                object[] prams = { objTableId, objTypeId };
+                await _hub.Clients.All.SendAsync("Table", model.TableId.ToString(), "1");
+                return new ResponseModel(true, "");
+            }
+            return new ResponseModel(false, msg);
         }
     }
 }
