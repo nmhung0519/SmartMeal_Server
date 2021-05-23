@@ -20,9 +20,15 @@ namespace SmartMeal_Api.Model
         public OrderModel() { }
         public OrderModel(DataRow dr)
         {
-            Id = dr.Field<int>("Id");
-            TableId = dr.Field<int>("TableId");
-            StatusId = dr.Field<int>("StatusId");
+            if (dr.Table.Columns.Contains("Id")) Id = Convert.ToInt32(dr["Id"]);
+            if (dr.Table.Columns.Contains("TableId")) TableId = Convert.ToInt32(dr["TableId"]);
+            if (dr.Table.Columns.Contains("StatusId")) StatusId = Convert.ToInt32(dr["StatusId"]);
+            if (dr.Table.Columns.Contains("StartTime")) StartTime = Convert.ToDateTime(dr["StartTime"]);
+            if (dr.Table.Columns.Contains("EndTime")) EndTime = Convert.ToDateTime(dr["EndTime"]);
+            if (dr.Table.Columns.Contains("CustomerName")) CustomerName = Convert.ToString(dr["CustomerName"]);
+            if (dr.Table.Columns.Contains("CustomerContact")) CustomerContact = Convert.ToString(dr["CustomerContact"]);
+            if (dr.Table.Columns.Contains("CreatorId")) CreatorId = Convert.ToInt32(dr["CreatorId"]);
+
         } 
     }
 }

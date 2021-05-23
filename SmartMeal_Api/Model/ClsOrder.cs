@@ -38,5 +38,66 @@ namespace SmartMeal_Server.Model
                 connection = null;
             }
         }
+
+        public string GetPreOrderForTable(int tableId, out OrderModel order)
+        {
+            var connection = new Connection();
+            var ht = new Hashtable();
+            order = null;
+            try
+            {
+                ht.Add("TableId", tableId);
+                DataTable dt;
+                string msg = connection.GetDatatableFromProc("sp_Order_GetPreOrderForTable", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (dt != null && dt.Rows.Count > 0)
+                    order = new OrderModel(dt.Rows[0]);
+                return "";
+            }
+            finally
+            {
+                ht.Clear();
+                connection = null;
+            }
+        }
+
+        public string Confirm(int id)
+        {
+            var connection = new Connection();
+            var ht = new Hashtable();
+            try
+            {
+                ht.Add("Id", id);
+                DataTable dt;
+                string msg = connection.GetDatatableFromProc("sp_Order_Confirm", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (dt != null && dt.Rows.Count > 0) return Convert.ToString(dt.Rows[0].ItemArray[0]);
+                return "Xảy ra lỗi trong quá trình xác nhận";
+            }
+            finally
+            {
+                ht.Clear();
+                connection = null;
+            }
+        }
+
+        public int GetTableIdById(int id)
+        {
+            var connection = new Connection();
+            var ht = new Hashtable();
+            try
+            {
+                ht.Add("Id", id);
+                DataTable dt;
+                string msg = connection.GetDatatableFromProc("sp_Order_GetTableIdById", ht, out dt);
+                if (!string.IsNullOrEmpty(msg) || dt == null || dt.Rows.Count == 0) return 0;
+                return Convert.ToInt32("0" + dt.Rows[0].ItemArray[0]);
+            }
+            finally
+            {
+                ht.Clear();
+                connection = null;
+            }
+        }
     }
 }

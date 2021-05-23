@@ -86,7 +86,7 @@ namespace SmartMeal_Api.Controllers
                 object objTableId = model.TableId;
                 object objTypeId = 1;
                 object[] prams = { objTableId, objTypeId };
-                await _hub.Clients.All.SendAsync("Table", model.TableId.ToString(), "1");
+                await _hub.Clients.Clients(UserManager.GetAllConnectionId()).SendAsync("Table", model.TableId.ToString(), "1");
                 return new ResponseModel(true, "");
             }
             return new ResponseModel(false, msg);

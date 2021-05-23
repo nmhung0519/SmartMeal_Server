@@ -5,6 +5,7 @@ E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\O
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\Out\SmartMeal_Server.deps.json
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\Out\SmartMeal_Server.runtimeconfig.json
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\Out\SmartMeal_Server.pdb
+E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNet.SignalR.Core.dll
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Connections.Abstractions.dll
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Http.Connections.Client.dll
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Http.Connections.Common.dll

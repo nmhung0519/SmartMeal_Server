@@ -41,3 +41,4 @@ E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\SmartMea
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\SmartMeal_Server.dll
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\SmartMeal_Server.pdb
 E:\Github Repo\SmartMeal_Server\SmartMeal_Api\obj\Release\netcoreapp3.1\SmartMeal_Server.genruntimeconfig.cache
+E:\Github Repo\SmartMeal_Server\SmartMeal_Api\bin\Release\netcoreapp3.1\Microsoft.AspNet.SignalR.Core.dll

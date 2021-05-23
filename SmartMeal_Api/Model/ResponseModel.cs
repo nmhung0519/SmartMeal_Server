@@ -20,7 +20,7 @@ namespace SmartMeal_Api.Model
         public ResponseModel(bool status, object obj)
         {
             this.status = status;
-            this.content = JsonConvert.SerializeObject(obj);
+            if (obj != null) this.content = JsonConvert.SerializeObject(obj);
         }
     }
 }
