@@ -57,7 +57,7 @@ namespace SmartMeal_Api.Controllers
                 string username;
                 if (!ClsToken.TryGetUser(token, out username))
                 {
-                    return new ResponseModel(false, "Xảy ra lỗi trong quá trình xác thực không hợp lệ");
+                    return new ResponseModel(false, "Xảy ra lỗi trong quá trình xác thực");
                 }
                 var cls = new ClsProduct();
                 string msg = cls.ChangeStatus(model.Id, model.IsActive, username);
@@ -79,12 +79,27 @@ namespace SmartMeal_Api.Controllers
                 string username;
                 if (!ClsToken.TryGetUser(token, out username))
                 {
-                    return new ResponseModel(false, "Xảy ra lỗi trong quá trình xác thực không hợp lệ");
+                    return new ResponseModel(false, "Xảy ra lỗi trong quá trình xác thực");
                 }
                 var cls = new ClsProduct();
                 string msg = cls.Update(model, username);
                 if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
                 return new ResponseModel(true, null);
+            }
+            catch (Exception ex) { return new ResponseModel(false, ex.Message); }
+        }
+
+        [Route("GetList")]
+        [HttpPost]
+        [Authen]
+        public ResponseModel GetList([FromBody] int statusId) { 
+            try
+            {
+                var clsProduct = new ClsProduct();
+                List<ProductModel> lists;
+                string msg = clsProduct.GetList(statusId, out lists);
+                if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+                return new ResponseModel(true, lists);
             }
             catch (Exception ex) { return new ResponseModel(false, ex.Message); }
         }

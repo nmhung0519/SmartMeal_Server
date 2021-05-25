@@ -16,15 +16,15 @@ namespace SmartMeal_Api.Model
             product = new ProductModel();
             try
             {
-                ht.Add("Name", model.Name);
+                ht.Add("Name", model.ProductName);
                 ht.Add("ProductLineId", model.ProductLineId);
-                ht.Add("Price", model.Price);
+                ht.Add("Price", model.ProductPrice);
                 DataTable dt;
                 string msg = connection.GetDatatableFromProc("sp_Product_Insert", ht, out dt);
                 if (!string.IsNullOrEmpty(msg)) return msg;
                 if (dt == null || dt.Rows.Count == 0) return "Đã xảy ra lỗi khi thêm mới sản phẩm.";
-                product.Name = model.Name;
-                product.Price = model.Price;
+                product.ProductName = model.ProductName;
+                product.ProductPrice = model.ProductPrice;
                 product.ProductLineId = model.ProductLineId;
                 product.IsActive = 1;
                 product.Id = int.Parse(dt.Rows[0].ItemArray[0].ToString());
@@ -46,7 +46,7 @@ namespace SmartMeal_Api.Model
             try
             {
                 ht.Add("Id", model.Id);
-                ht.Add("Name", model.Name);
+                ht.Add("Name", model.ProductName);
                 ht.Add("ProductLineId", model.ProductLineId);
                 ht.Add("StartPrice", model.StartPrice);
                 ht.Add("EndPrice", model.EndPrice);
@@ -85,13 +85,36 @@ namespace SmartMeal_Api.Model
             try
             {
                 ht.Add("Id", model.Id);
-                ht.Add("Name", model.Name);
+                ht.Add("Name", model.ProductName);
                 ht.Add("ProductLineId", model.ProductLineId);
-                ht.Add("Price", model.Price);
+                ht.Add("Price", model.ProductPrice);
                 ht.Add("IsActive", model.IsActive);
                 ht.Add("Username", username);
                 if (connection.ExecuteNonQuery("sp_Product_Update", ht) > 1) return "";
                 return "Xảy ra lỗi trong quá trình cập nhật sản phẩm";
+            }
+            catch (Exception ex) { return ex.Message; }
+        }
+
+        public string GetList(int statusId, out List<ProductModel> lists)
+        {
+            var connection = new Connection();
+            Hashtable ht = new Hashtable();
+            lists = new List<ProductModel>();
+            try
+            {
+                ht.Add("StatusId", statusId);
+                DataTable dt;
+                string msg = connection.GetDatatableFromProc("sp_Product_GetList", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        lists.Add(new ProductModel(dr));
+                    }
+                }
+                return "";
             }
             catch (Exception ex) { return ex.Message; }
         }
