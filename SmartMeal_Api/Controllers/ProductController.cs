@@ -103,5 +103,21 @@ namespace SmartMeal_Api.Controllers
             }
             catch (Exception ex) { return new ResponseModel(false, ex.Message); }
         }
+
+        [Route("Get")]
+        [HttpPost]
+        [Authen]
+        public ResponseModel Get([FromBody] int id)
+        {
+            try
+            {
+                var clsProduct = new ClsProduct();
+               ProductModel product;
+                string msg = clsProduct.Get(id, out product);
+                if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+                return new ResponseModel(true, product);
+            }
+            catch (Exception ex) { return new ResponseModel(false, ex.Message); }
+        }
     }
 }

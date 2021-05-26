@@ -24,6 +24,11 @@ namespace SmartMeal_Server
             return users.Where(x => x.Username == userName).Select(x => x.ConnectionId).FirstOrDefault();
         }
 
+        public static List<string> GetConnectionIds(string userName)
+        {
+            return users.Where(x => x.Username == userName).Select(x => x.ConnectionId).ToList();
+        }
+
         public static string GetUserName(string connectionId)
         {
             return users.Where(x => x.ConnectionId == connectionId).Select(x => x.Username).FirstOrDefault();
@@ -38,9 +43,12 @@ namespace SmartMeal_Server
 
         public static void DeleteByUserName(string userName)
         {
-            var user = users.Where(x => x.Username == userName).FirstOrDefault();
-            if (user == null) return;
-            users.Remove(user);
+            var listUser = users.Where(x => x.Username == userName).ToList();
+            if (listUser == null) return;
+            foreach (var user in listUser)
+            {
+                users.Remove(user);
+            }
         }
 
         public static void Add(string username, string connectionId)

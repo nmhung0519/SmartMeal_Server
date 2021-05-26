@@ -29,7 +29,7 @@ namespace SmartMeal_Api
 
         public override Task OnDisconnectedAsync(Exception exception)
         {
-            UserManager.DeleteByConnectionId(Context.ConnectionId);
+            //UserManager.DeleteByConnectionId(Context.ConnectionId);
             return base.OnDisconnectedAsync(exception);
         }
 
@@ -70,6 +70,25 @@ namespace SmartMeal_Api
                 string connectionSendToId = userSendTo;
                 await Clients.Client(connectionSendToId).SendAsync("Message", sender, message);
             }
+        }
+
+        public void Logout()
+        {
+            UserManager.DeleteByConnectionId(Context.ConnectionId);
+        }
+
+        public async Task LogoutAll()
+        {
+            if (!UserManager.CheckExists(Context.ConnectionId))
+            {
+                await Clients.Caller.SendAsync("Unauthorized");
+                return;
+            }
+
+            string sender = UserManager.GetUserName(Context.ConnectionId);
+
+            await Clients.Clients(UserManager.GetConnectionIds(sender)).SendAsync("Logout");
+            UserManager.DeleteByUserName(sender);
         }
     }
 }

@@ -118,5 +118,31 @@ namespace SmartMeal_Api.Model
             }
             catch (Exception ex) { return ex.Message; }
         }
+
+        public string Get(int id, out ProductModel product)
+        {
+            product = null;
+            var connection = new Connection();
+            var ht = new Hashtable();
+            try
+            {
+                ht.Add("Id", id);
+                DataTable dt = new DataTable();
+                string msg = connection.GetDatatableFromProc("sp_Product_GetById", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (dt == null || dt.Rows.Count == 0) return "Không tìm thấy sản phẩm";
+                product = new ProductModel(dt.Rows[0]);
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                connection = null;
+                ht.Clear();
+            }
+        }
     }
 }
