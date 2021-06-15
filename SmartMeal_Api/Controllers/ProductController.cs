@@ -45,6 +45,22 @@ namespace SmartMeal_Api.Controllers
             catch (Exception ex) { return new ResponseModel(false, ex.Message); }
         }
 
+        [Route("SearchByName")]
+        [HttpPost]
+        [Authen]
+        public ResponseModel SearchByName([FromBody] SearchProductModel model)
+        {
+            try
+            {
+                var cls = new ClsProduct();
+                List<ProductModel> products;
+                string msg = cls.SearchByName(model.ProductName, out products);
+                if (string.IsNullOrEmpty(msg)) return new ResponseModel(true, products);
+                return new ResponseModel(false, msg);
+            }
+            catch (Exception ex) { return new ResponseModel(false, ex.Message); }
+        }
+
         [Route("ChangeStatus")]
         [HttpPost]
         [Authen]

@@ -14,7 +14,7 @@ namespace SmartMeal_Api.Model
         private MySqlConnection conn { get; set; }
         public Connection()
         {
-            cnnString = "server=localhost;Database=smartmeal;user id=root; PWD=root";
+            cnnString = "server=127.0.0.1;Database=smartmeal;user id=user; PWD=Admin@123";
             conn = new MySqlConnection(cnnString);
         }
 

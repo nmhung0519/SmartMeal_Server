@@ -63,6 +63,26 @@ namespace SmartMeal_Api.Model
             catch (Exception ex) { return ex.Message; }
         }
 
+        public string SearchByName(string name, out List<ProductModel> products)
+        {
+            var connection = new Connection();
+            Hashtable ht = new Hashtable();
+            products = new List<ProductModel>();
+            try
+            {
+                ht.Add("Name", name);
+                DataTable dt;
+                string msg = connection.GetDatatableFromProc("sp_Product_SearchByName", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows) products.Add(new ProductModel(dr));
+                }
+                return "";
+            }
+            catch (Exception ex) { return ex.Message; }
+        }
+
         public string ChangeStatus(int id, int isActive, string username)
         {
             var connection = new Connection();

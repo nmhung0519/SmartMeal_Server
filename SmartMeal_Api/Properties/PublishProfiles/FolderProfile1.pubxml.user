@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\SmartMeal_Server_Deploy</_PublishTargetUrl>
+    <History>True|2021-06-12T03:36:15.5157242Z;False|2021-06-12T10:34:37.4585547+07:00;False|2021-06-12T10:33:32.7238830+07:00;False|2021-06-12T10:32:45.6498673+07:00;False|2021-06-12T10:31:26.0742441+07:00;</History>
+  </PropertyGroup>
+</Project>

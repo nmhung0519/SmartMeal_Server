@@ -65,10 +65,9 @@ namespace SmartMeal_Api
             var sendTo = receivers.Split(';');
             foreach (var receiver in sendTo)
             {
-                var userSendTo = UserManager.GetConnectionId(receiver);
+                var userSendTo = UserManager.GetConnectionIds(receiver);
                 if (userSendTo == null) continue;
-                string connectionSendToId = userSendTo;
-                await Clients.Client(connectionSendToId).SendAsync("Message", sender, message);
+                await Clients.Clients(userSendTo).SendAsync("Message", sender, message);
             }
         }
 

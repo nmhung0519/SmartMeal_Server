@@ -91,5 +91,17 @@ namespace SmartMeal_Api.Controllers
             }
             return new ResponseModel(false, msg);
         }
+
+        [Route("Fill")]
+        [HttpPost]
+        [Authen]
+        public async Task<ResponseModel> Fill([FromBody] OrderModel model)
+        {
+            var clsTable = new ClsTable();
+            string msg = clsTable.Fill(model);
+            if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+            await _hub.Clients.Clients(UserManager.GetAllConnectionId()).SendAsync("Table", model.TableId.ToString(), "1");
+            return new ResponseModel(true, "");
+        }
     }
 }

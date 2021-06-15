@@ -68,5 +68,30 @@ namespace SmartMeal_Api.Model
             }
             catch (Exception ex) { return ex.Message; }
         }
+
+        public string Fill(OrderModel model)
+        {
+            var connection = new Connection();
+            var ht = new Hashtable();
+            try
+            {
+                DataTable dt = new DataTable();
+                ht.Add("TableId", model.TableId);
+                ht.Add("CustomerName", model.CustomerName);
+                ht.Add("CustomerContact", model.CustomerContact);
+                ht.Add("CreatorId", 1);
+                string msg = connection.GetDatatableFromProc("sp_Table_Fill", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                return Convert.ToString(dt.Rows[0].ItemArray[0]);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                connection = null;
+            }
+        }
     }
 }
