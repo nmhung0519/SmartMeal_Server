@@ -8,6 +8,7 @@ namespace SmartMeal_Api.Model{
         public int ProductCount { get; set; }
         public int ProductPrice { get; set; }
         public DateTime CreatedTime { get; set; }
+        public OrderDetailModel() { }
 
         public OrderDetailModel(DataRow dr)
         {
