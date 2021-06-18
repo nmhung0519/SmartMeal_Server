@@ -1,32 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Server.csproj": {}
+    "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj": {}
   },
   "projects": {
-    "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Server.csproj": {
+    "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Server.csproj",
+        "projectUniqueName": "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj",
         "projectName": "SmartMeal_Server",
-        "projectPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\SmartMeal_Server.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\Github Repo\\SmartMeal_Server\\SmartMeal_Api\\obj\\",
+        "projectPath": "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +35,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNet.SignalR.Core": {
               "target": "Package",
@@ -75,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.410/RuntimeIdentifierGraph.json"
         }
       }
     }

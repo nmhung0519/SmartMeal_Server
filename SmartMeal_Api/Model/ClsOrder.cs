@@ -1,5 +1,4 @@
 ﻿using SmartMeal_Api;
-using SmartMeal_Api.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SmartMeal_Server.Model
+namespace SmartMeal_Api.Model
 {
     public class ClsOrder
     {
@@ -53,6 +52,9 @@ namespace SmartMeal_Server.Model
                 if (dt != null && dt.Rows.Count > 0)
                     order = new OrderModel(dt.Rows[0]);
                 return "";
+            }
+            catch (Exception ex) {
+                return "GetPreOrderForTable_EX: " + ex.Message;
             }
             finally
             {

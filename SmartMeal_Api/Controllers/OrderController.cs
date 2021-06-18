@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using SmartMeal_Api;
 using SmartMeal_Api.Model;
-using SmartMeal_Server.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

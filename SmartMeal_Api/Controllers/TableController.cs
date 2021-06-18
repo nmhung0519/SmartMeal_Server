@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.SignalR.Client;
 using SmartMeal_Api.Model;
 using SmartMeal_Server;
-using SmartMeal_Server.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -102,6 +101,42 @@ namespace SmartMeal_Api.Controllers
             if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
             await _hub.Clients.Clients(UserManager.GetAllConnectionId()).SendAsync("Table", model.TableId.ToString(), "1");
             return new ResponseModel(true, "");
+        }
+
+        [Route("GetPaymentInfo")]
+        [HttpGet]
+        [Authen]
+        public ResponseModel GetPaymentInfo(int tableId) 
+        {
+            try 
+            {
+                var cls = new ClsTable();
+                DataPaymentModel result;
+                string msg = cls.GetPaymentInfo(tableId, out result);
+                if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+                return new ResponseModel(true, result);
+            }
+            catch (Exception ex) {
+                return new ResponseModel(false, "Ctl_GetPaymentInfo_EX: " + ex.Message);
+            }
+        }
+
+        [Route("Pay")]
+        [HttpPost]
+        [Authen]
+        public ResponseModel Pay(int tableId) 
+        {
+            try 
+            {
+                var cls = new ClsTable();
+                string msg = cls.Pay(tableId);
+                if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+                return new ResponseModel(true, "");
+            }
+            catch (Exception ex) 
+            {
+                return new ResponseModel(false, ex.Message);
+            }
         }
     }
 }

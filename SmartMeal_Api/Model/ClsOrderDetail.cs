@@ -32,5 +32,28 @@ namespace SmartMeal_Api.Model
                 ht.Clear();
             }
         }
+
+        public string GetInfoPayment(int tableId, out List<PaymentItem> result) {
+            result = new List<PaymentItem>();
+            var connection = new Connection();
+            var ht = new Hashtable();
+            try {
+                ht.Add("TableId", tableId);
+                DataTable dt = new DataTable();
+                string msg = connection.GetDatatableFromProc("sp_OrderDetail_GetInfoPayment", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                foreach (DataRow dr in dt.Rows) {
+                    result.Add(new PaymentItem(dr));
+                }
+                return "";
+            }
+            catch (Exception ex) {
+                return "GetInfoPayment_EX: " + ex.Message;
+            }
+            finally {
+                connection = null;
+                ht.Clear();
+            }
+        }
     }
 }
