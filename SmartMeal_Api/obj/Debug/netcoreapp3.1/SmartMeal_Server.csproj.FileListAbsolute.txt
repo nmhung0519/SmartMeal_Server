@@ -86,3 +86,47 @@ E:/Github Repo/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.
 /media/hung/Data/Github Repo/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.dll
 /media/hung/Data/Github Repo/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.pdb
 /media/hung/Data/Github Repo/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.genruntimeconfig.cache
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/appsettings.Development.json
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/appsettings.json
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/SmartMeal_Server
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/SmartMeal_Server.deps.json
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/SmartMeal_Server.runtimeconfig.json
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/SmartMeal_Server.runtimeconfig.dev.json
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/SmartMeal_Server.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/SmartMeal_Server.pdb
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNet.SignalR.Core.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Connections.Abstractions.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Http.Connections.Client.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Http.Connections.Common.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.SignalR.Client.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.SignalR.Client.Core.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.SignalR.Common.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/MySqlConnector.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/System.IO.Pipelines.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/System.Text.Encodings.Web.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/System.Text.Json.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/bin/Debug/netcoreapp3.1/System.Threading.Channels.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.csprojAssemblyReference.cache
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.AssemblyInfoInputs.cache
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.AssemblyInfo.cs
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.csproj.CoreCompileInputs.cache
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.MvcApplicationPartsAssemblyInfo.cache
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.RazorTargetAssemblyInfo.cache
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.csproj.CopyComplete
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/staticwebassets/SmartMeal_Server.StaticWebAssets.Manifest.cache
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/staticwebassets/SmartMeal_Server.StaticWebAssets.xml
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.dll
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.pdb
+/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/Debug/netcoreapp3.1/SmartMeal_Server.genruntimeconfig.cache

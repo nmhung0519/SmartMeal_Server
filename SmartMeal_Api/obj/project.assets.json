@@ -797,11 +797,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/hung/Data/Github Repo/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj",
+      "projectUniqueName": "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj",
       "projectName": "SmartMeal_Server",
-      "projectPath": "/media/hung/Data/Github Repo/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj",
+      "projectPath": "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/SmartMeal_Server.csproj",
       "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/media/hung/Data/Github Repo/SmartMeal_Server/SmartMeal_Api/obj/",
+      "outputPath": "/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/root/.nuget/NuGet/NuGet.Config"
