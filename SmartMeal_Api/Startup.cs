@@ -5,7 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using SmartMeal_Server;
+using Microsoft.Extensions.FileProviders;
+using SmartMeal_Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,11 @@ namespace SmartMeal_Api
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<MainHub>("/hub");
+            });
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions {
+                FileProvider = new PhysicalFileProvider("/home/hung/Documents/GitHub/SmartMeal_Server/SmartMeal_Api/UploadImage/"),
+                RequestPath = "/UploadImage"
             });
         }
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Security.AccessControl;
+using System.Net.Mime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +21,9 @@ namespace SmartMeal_Api.Model
                 ht.Add("Name", model.ProductName);
                 ht.Add("ProductLineId", model.ProductLineId);
                 ht.Add("Price", model.ProductPrice);
+                ht.Add("IsActive", model.IsActive);
+                var clsImg = new ClsImage();
+                ht.Add("Image", clsImg.Upload(model.Image));
                 DataTable dt;
                 string msg = connection.GetDatatableFromProc("sp_Product_Insert", ht, out dt);
                 if (!string.IsNullOrEmpty(msg)) return msg;
@@ -110,8 +115,17 @@ namespace SmartMeal_Api.Model
                 ht.Add("Price", model.ProductPrice);
                 ht.Add("IsActive", model.IsActive);
                 ht.Add("Username", username);
-                if (connection.ExecuteNonQuery("sp_Product_Update", ht) > 1) return "";
-                return "Xảy ra lỗi trong quá trình cập nhật sản phẩm";
+                if (!string.IsNullOrEmpty(model.Image))
+                {
+                    var clsImg = new ClsImage();
+                    model.Image = clsImg.Upload(model.Image);
+                }
+                ht.Add("Image", model.Image);
+                DataTable dt = new DataTable();
+                string msg = connection.GetDatatableFromProc("sp_Product_Update", ht, out dt);
+                if (!string.IsNullOrEmpty(msg)) return msg;
+                if (dt == null || dt.Rows.Count == 0) return "Xảy ra lỗi trong quá trình cập nhật sản phẩm";
+                return Convert.ToString(dt.Rows[0].ItemArray[0]);
             }
             catch (Exception ex) { return ex.Message; }
         }

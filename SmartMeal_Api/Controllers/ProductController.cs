@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Primitives;
 using SmartMeal_Api.Model;
+using SmartMeal_Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +15,26 @@ namespace SmartMeal_Api.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly IHubContext<MainHub> _hub;
+
+        public ProductController(IHubContext<MainHub> hub)
+        {
+            _hub = hub;
+        }
         [Route("Insert")]
         [HttpPost]
         [Authen]
-        public ResponseModel Insert([FromBody] ProductModel model)
+        public async Task<ResponseModel> Insert([FromBody] ProductModel model)
         {
             try
             {
                 var cls = new ClsProduct();
                 ProductModel product;
                 string msg = cls.Insert(model, out product);
-                if (string.IsNullOrEmpty(msg)) return new ResponseModel(true, product);
+                if (string.IsNullOrEmpty(msg)) {
+                    await _hub.Clients.Clients(UserManager.GetAllConnectionId()).SendAsync("Product", model.Id, "1");
+                    return new ResponseModel(true, product);
+                }
                 return new ResponseModel(false, msg);
             }
             catch (Exception ex) { return new ResponseModel(false, ex.Message); }
@@ -86,7 +97,7 @@ namespace SmartMeal_Api.Controllers
         [Route("Update")]
         [HttpPost]
         [Authen]
-        public ResponseModel Update([FromBody] ProductModel model)
+        public async Task<ResponseModel> Update([FromBody] ProductModel model)
         {
             try
             {
@@ -100,6 +111,7 @@ namespace SmartMeal_Api.Controllers
                 var cls = new ClsProduct();
                 string msg = cls.Update(model, username);
                 if (!string.IsNullOrEmpty(msg)) return new ResponseModel(false, msg);
+                await _hub.Clients.Clients(UserManager.GetAllConnectionId()).SendAsync("Product", model.Id, "1");
                 return new ResponseModel(true, null);
             }
             catch (Exception ex) { return new ResponseModel(false, ex.Message); }
@@ -123,7 +135,7 @@ namespace SmartMeal_Api.Controllers
         [Route("Get")]
         [HttpPost]
         [Authen]
-        public ResponseModel Get([FromBody] int id)
+        public ResponseModel Get(int id)
         {
             try
             {
